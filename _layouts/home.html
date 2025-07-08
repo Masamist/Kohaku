@@ -1,117 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/kohaku.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Castoro&family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>{{ page.title }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/kohaku.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Castoro&family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>{{ page.title }}</title>
 </head>
 <body>
-    <header>
-        <!-- Header content goes here -->
-    </header>
-    <main class="wrapper">
-        <!-- Home Intro -->
-        <section class="intro_container">
-            <img src="/assets/images/home_intro.png" alt='Chef cooking image'>
-            <div>
-            <h2 class="intro_header">Kohaku <span class="intro_kanji">琥珀</span></h2>
-            <h4 class="intro_subheader">Proudly Serving Japanese Cuisine</h4>
-            <p>At Kohaku, we take pride in sharing the rich flavours 
-            and traditions of Japanese cuisine. Led by Chef Kosuke, 
-            every dish is thoughtfully prepared using seasonal 
-            ingredients, time-honoured techniques, and a deep respect 
-            for the craft. Whether you're planning a private 
-            celebration, corporate event, or wedding, we bring 
-            authentic taste and heartfelt hospitality to every guest.
-            </p>
-        </section>
+  <header>
+      <!-- Header content goes here -->
+  </header>
+  <main class="wrapper">
+    <!-- Home Intro -->
+    <section class="intro_container">
+      <img src="/assets/images/home_intro.png" alt='Chef cooking image'>
+      <div>
+        <h2 class="intro_header">Kohaku <span class="intro_kanji">琥珀</span></h2>
+        <h4 class="intro_subheader">Proudly Serving Japanese Cuisine</h4>
+        <p>At Kohaku, we take pride in sharing the rich flavours 
+        and traditions of Japanese cuisine. Led by Chef Kosuke, 
+        every dish is thoughtfully prepared using seasonal 
+        ingredients, time-honoured techniques, and a deep respect 
+        for the craft. Whether you're planning a private 
+        celebration, corporate event, or wedding, we bring 
+        authentic taste and heartfelt hospitality to every guest.
+        </p>
+      </div>
+    </section>
 
-        {% schema %}
-        {
-        "name": "Services",
-        "settings": [],
-        "blocks": [
-            {
-            "type": "service",
-            "name": "Service",
-            "settings": [
-                {
-                "type": "text",
-                "id": "title",
-                "label": "Service Title"
-                },
-                {
-                "type": "textarea",
-                "id": "description",
-                "label": "Service Description"
-                },
-                {
-                "type": "image_picker",
-                "id": "image",
-                "label": "Service Image"
-                }
-            ]
-            }
-        ],
-        "max_blocks": 3,
-        "presets": [
-            {
-            "name": "Services Section",
-            "category": "Custom"
-            }
-        ]
-        }
-        {% endschema %}
 
-        <!-- Home Services -->
-        <section class="container">
-            <h2 class="heading">Our Services</h2>
-            <div class="description-container">
-               <p class="description">Discover our tailored Japanese catering services, 
-                thoughtfully crafted to elevate events of any size or 
-                occasion with authentic flavours and exceptional hospitality.
-            </p> 
-            </div>
+    <!-- Home Services -->
+    <section class="container">
+      <h2 class="heading">Our Services</h2>
+      <div class="description-container">
+        <p class="description">Discover our tailored Japanese catering services, 
+        thoughtfully crafted to elevate events of any size or 
+        occasion with authentic flavours and exceptional hospitality.
+        </p> 
+      </div>
+      
+      <div class="service-container">
+        {% for services in site.data.services %}
+          <div>
+            <img src="{{ '/assets/images/' | append: services.img | relative_url }}" alt="{{ services.title }} image">
+            <h3>{{ services.title }}</h3>
+            <p>{{ services.detail }}</p>
+          </div>
+        {% endfor %}
+      </div>
+      <button class="btn-outline">See More Services</button>    
+    </section>
 
-            <!-- <script>
-                fetch('{{ "services.json" | asset_url }}')
-                    .then(res => res.json())
-                    .then(data => {
-                    const container = document.getElementById("services-container");
+    <!-- Home Feedback -->
+    <section class="container">
+      <h2 class="heading">What Our Clients Are Saying</h2>
+      <div class="description-container">
+        <p class="description">We’re proud to have earned the trust of 
+          our clients. Their kind words reflect the care, quality, 
+          and unforgettable experience we aim to deliver at every event.
+        </p> 
+      </div>
 
-                    data.forEach(service => {
-                        const div = document.createElement("div");
-                        div.className = "service-container";
-                        div.innerHTML = `
-                        <img src="{{ 'PLACEHOLDER' | asset_url }}".replace('PLACEHOLDER', service.img) alt="${service.title}" style="max-width: 100%;">
-                        <h3>${service.title}</h3>
-                        <p>${service.detail}</p>
-                        `;
-                        container.appendChild(div);
-                    });
-                    })
-                    .catch(err => console.error("Failed to load services.json:", err));
-                </script> -->
-            
-            <div class="service-container">
-                {% for services in site.data.services %}
-                    <div>
-                        <img src="{{ '/assets/images/' | append: services.img | relative_url }}" alt="{{ services.title }} image">
-                        <h3>{{ services.title }}</h3>
-                        <p>{{ services.detail }}</p>
-                    </div>
-                {% endfor %}
-            </div>    
-            </div>
-        </section>
+      <div class="feedback-container">
+        <div class="slider-controls">
+          <button onclick="slideLeft()">←</button>
+        </div>
+        <div class="slider-container">
+          
+          <div class="slider-track" id="slider">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button onclick="slideRight()">→</button>
+        </div> 
+      </div>
 
-    </main>
-    <footer>
-        <!-- Footer content goes here -->
-    </footer>
+      
+
+      
+      
+      <!-- <div class="card">
+        {% for services in site.data.services %}
+          <div>
+            <img src="{{ '/assets/images/' | append: services.img | relative_url }}" alt="{{ services.title }} image">
+            <h3>{{ services.title }}</h3>
+            <p>{{ services.detail }}</p>
+          </div>
+        {% endfor %}
+      </div> -->    
+    </section>
+
+      
+
+  </main>
+  <footer>
+    <!-- Footer content goes here -->
+  </footer>
+    <script>
+    let currentSlide = 0;
+
+    function slideLeft() {
+      const slider = document.getElementById("slider");
+      const totalSlides = slider.children.length;
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    }
+
+    function slideRight() {
+      const slider = document.getElementById("slider");
+      const totalSlides = slider.children.length;
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlide();
+    }
+
+    function updateSlide() {
+      const slider = document.getElementById("slider");
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  </script>
 </body>
 </html>
