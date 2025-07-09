@@ -204,3 +204,39 @@ h4, p {
   max-width: 22rem;
 }
 }
+
+/**
+ * Home_question
+ */
+.question_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  background-image: url('/assets/images/home_question.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  min-height: 30rem;
+}
+.intro_container div {
+  width: 50%;
+}
+.intro_container div img {
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .intro_container {
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: first baseline;
+    gap: 3rem;
+    max-width: 600px;
+  }
+  .intro_container div {
+    width: 100%;
+  }
+}
