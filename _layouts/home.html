@@ -13,72 +13,91 @@
   <header>
       <!-- Header content goes here -->
   </header>
-  <main class="wrapper">
+  <main>
     <!-- Home Intro -->
-    <section class="intro_container">
-      <img src="/assets/images/home_intro.png" alt='Chef cooking image'>
-      <div>
-        <h2 class="intro_header">Kohaku <span class="intro_kanji">琥珀</span></h2>
-        <h4 class="intro_subheader">Proudly Serving Japanese Cuisine</h4>
-        <p>At Kohaku, we take pride in sharing the rich flavours 
-        and traditions of Japanese cuisine. Led by Chef Kosuke, 
-        every dish is thoughtfully prepared using seasonal 
-        ingredients, time-honoured techniques, and a deep respect 
-        for the craft. Whether you're planning a private 
-        celebration, corporate event, or wedding, we bring 
-        authentic taste and heartfelt hospitality to every guest.
-        </p>
+    <section class="wrapper">
+      <div class="intro_container">
+        <img src="/assets/images/home_intro.png" alt='Chef cooking image'>
+        <div>
+          <h2 class="intro_header">Kohaku <span class="intro_kanji">琥珀</span></h2>
+          <h4 class="intro_subheader">Proudly Serving Japanese Cuisine</h4>
+          <p>At Kohaku, we take pride in sharing the rich flavours 
+          and traditions of Japanese cuisine. Led by Chef Kosuke, 
+          every dish is thoughtfully prepared using seasonal 
+          ingredients, time-honoured techniques, and a deep respect 
+          for the craft. Whether you're planning a private 
+          celebration, corporate event, or wedding, we bring 
+          authentic taste and heartfelt hospitality to every guest.
+          </p>
+        </div>
       </div>
+      
     </section>
 
 
     <!-- Home Services -->
-    <section class="container">
-      <h2 class="heading">Our Services</h2>
-      <div class="description-container">
-        <p class="description">Discover our tailored Japanese catering services, 
-        thoughtfully crafted to elevate events of any size or 
-        occasion with authentic flavours and exceptional hospitality.
-        </p> 
-      </div>
-      
-      <div class="service-container">
-        {% for services in site.data.services %}
-          <div>
-            <img src="{{ '/assets/images/' | append: services.img | relative_url }}" alt="{{ services.title }} image">
-            <h3>{{ services.title }}</h3>
-            <p>{{ services.detail }}</p>
-          </div>
-        {% endfor %}
-      </div>
-      <button class="btn-outline">See More Services</button>    
+    <section class="wrapper">
+      <div class="container">
+        <h2 class="heading">Our Services</h2>
+        <div class="description-container">
+          <p class="description">Discover our tailored Japanese catering services, 
+          thoughtfully crafted to elevate events of any size or 
+          occasion with authentic flavours and exceptional hospitality.
+          </p> 
+        </div>
+        
+        <div class="service-container">
+          {% for services in site.data.services %}
+            <div>
+              <img src="{{ '/assets/images/' | append: services.img | relative_url }}" alt="{{ services.title }} image">
+              <h3>{{ services.title }}</h3>
+              <p>{{ services.detail }}</p>
+            </div>
+          {% endfor %}
+        </div>
+        <button class="btn outline">See More Services</button>
+      </div>       
     </section>
 
     <!-- Home Feedback -->
-    <section class="container">
-      <h2 class="heading">What Our Clients Are Saying</h2>
-      <div class="description-container">
-        <p class="description">We’re proud to have earned the trust of 
-          our clients. Their kind words reflect the care, quality, 
-          and unforgettable experience we aim to deliver at every event.
-        </p> 
-      </div>
+    <section class="wrapper">
+      <div class="container">
+        <h2 class="heading">What Our Clients Are Saying</h2>
+        <div class="description-container">
+          <p class="description">We’re proud to have earned the trust of 
+            our clients. Their kind words reflect the care, quality, 
+            and unforgettable experience we aim to deliver at every event.
+          </p> 
+        </div>
 
-      <div class="feedback-container">
-        <div class="slider-controls">
-          <button onclick="slideLeft()">←</button>
-        </div>
-        <div class="slider-container">
-          
-          <div class="slider-track" id="slider">
-            <div class="card">Card 1</div>
-            <div class="card">Card 2</div>
-            <div class="card">Card 3</div>
+        <div class="feedback-container">
+          <div class="slider-controls">
+            <button onclick="slideLeft()"  class="arrow-btn left"></button>
           </div>
+          <div class="slider-container">
+            
+            <div class="slider-track" id="slider">
+              <div class="card">
+                <h1 class="feedback-header">
+                  <span class="quotation-mark">"</span><br />
+                  The Food was Amazing!!<br />Such a great performance of Sushi! 
+                </h1>
+                <p>
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                  Ut enim ad minim veniam, quis nostrud.
+                </p>
+                <p class="feedback-client-name">John Doe / Smith Corporation</p>
+              </div>
+              <div class="card">Card 2</div>
+              <div class="card">Card 3</div>
+            </div>
+          </div>
+          <div class="slider-controls">
+            <button onclick="slideLeft()" class="arrow-btn right"></button>
+          </div> 
         </div>
-        <div class="slider-controls">
-          <button onclick="slideRight()">→</button>
-        </div> 
+
       </div>
 
       
@@ -99,9 +118,9 @@
     <!-- Home Question -->
     <section class="question_container">
       <div>
-        <h2 class="intro_header">Have a question?</h2>
-        <h4 class="intro_subheader">Reach out now—we’re here to help.</h4>
-        <button class="btn-outline">Contact Us</button> 
+        <h2 class="question_header">Have a question?</h2>
+        <h4 class="question_subheader">Reach out now—we’re here to help.</h4>
+        <button class="btn outline-white">Contact Us</button> 
       </div>
     </section>
       
