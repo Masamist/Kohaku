@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/kohaku.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Castoro&family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>{{ page.title }}</title>
+</head>
+<body>
+  <header>
+        {% include header.html %}
+  </header>
+  <main>
+        {{ content }}
+  </main>
+  <footer>
+    <!-- Footer content goes here -->
+     {% include footer.html %}
+  </footer>
+    <script>
+    let currentSlide = 0;
+
+    function slideLeft() {
+      const slider = document.getElementById("slider");
+      const totalSlides = slider.children.length;
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    }
+
+    function slideRight() {
+      const slider = document.getElementById("slider");
+      const totalSlides = slider.children.length;
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlide();
+    }
+
+    function updateSlide() {
+      const slider = document.getElementById("slider");
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  </script>
+</body>
+</html>
