@@ -23,24 +23,31 @@ title: Home
       
     </section>
 
+    {% assign services = 
+    "Corporate Catering|Refined Japanese cuisine tailored for events, meetings, and company celebrations.|corporate.png/
+    Private Catering|Personalised catering for birthdays, anniversaries, and special gatherings at your home or chosen venue.|private.png/
+    Wedding Catering|Elegant, seasonal Japanese dishes crafted to make your wedding day unforgettable.|wedding.png" | split: "/" %}
+
 
     <!-- Home Services -->
     <section class="wrapper">
       <div class="container">
         <h2 class="heading">Our Services</h2>
         <div class="description-container">
-          <p class="description">Discover our tailored Japanese catering services, 
-          thoughtfully crafted to elevate events of any size or 
-          occasion with authentic flavours and exceptional hospitality.
+          <p class="description">
+            Discover our tailored Japanese catering services, 
+            thoughtfully crafted to elevate events of any size or 
+            occasion with authentic flavours and exceptional hospitality.
           </p> 
         </div>
         
         <div class="service-container">
-          {% for services in site.data.services %}
+          {% for item in services %}
+          {% assign parts = item | split: "|" %}
             <div>
-              <img src="{{ '/assets/images/' | append: services.img | relative_url }}" alt="{{ services.title }} image">
-              <h3>{{ services.title }}</h3>
-              <p>{{ services.detail }}</p>
+              <img src="/assets/images/{{ parts[2] | strip }}" alt="{{ parts[0] | strip }} image">              
+              <h3 class="service-title">{{ parts[0] | strip }}</h3>
+              <p>{{ parts[1] | strip }}</p>
             </div>
           {% endfor %}
         </div>
@@ -109,6 +116,6 @@ title: Home
       <div>
         <h2 class="question_header">Have a question?</h2>
         <h4 class="question_subheader">Reach out now—we’re here to help.</h4>
-        <button class="btn outline-white">Contact Us</button> 
+        <a href="{{ '/contact.html' | relative_url }}" class="btn outline-white">Contact Us</a> 
       </div>
     </section>
