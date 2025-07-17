@@ -1,4 +1,19 @@
 /**
+  * About___common
+ */
+.about_heading {
+  text-align: left;
+}
+
+/**
+  * About___top_wrapper
+ */
+ .about_top_wrapper {
+    background-image: url('/assets/images/about_intro.png');
+
+ }
+
+/**
   * About___chef
  */
 .about_chef_container {
@@ -34,6 +49,7 @@
  .about_story_container {
     position: relative;
     width: 100%;
+    margin-bottom: 15rem;
  }
 .about_story_image_container {
   width: 100%;
@@ -45,26 +61,29 @@
     background-color: #fff;
     opacity: 0.8;
     position: absolute;
-    bottom: -13rem;
+    bottom: -30rem;
     right: 0;
-    padding-top: 2rem;
-    padding-left: 4rem;
+    padding: 2rem 0 0 4rem;
     margin-bottom: 13rem;
-    max-width: 500px;
+    max-width: 480px;
 }
 @media screen and (max-width: 700px) {
   .about_story_content_container {
     background-color: none;
-    opacity: 0.8;
     position: relative;
     bottom: 0;
-    right: 0;
     margin-bottom: 0;
-    padding-top: 1.8rem;
-    padding-left: 0;
-    max-width: 480px;
+    padding: 0;
+  }
+  .about_story_container {
+    margin-bottom: 0;
   }
 }
+
+
+/**
+  * About Our Story Topicks
+ */
 .about_story_sub_container {
   display: relative;
   clear: both;
@@ -74,9 +93,8 @@
   gap: 2rem;
   max-width: 720px;
   align-items: flex-end;
-  margin-top: 3rem;
 }
-.about_story_sub_container:last-child {
+.about_story_sub_container_revers {
   flex-direction: row-reverse;
   align-self: flex-end;
 }
@@ -84,14 +102,16 @@
   width: 100%;
   max-width: 350px;
 }
+@media screen and (max-width: 1100px) {
+  .about_story_sub_container_revers {
+  flex-direction: row;
+  align-self: flex-start;
+}
+}
 @media screen and (max-width: 700px) {
   .about_story_sub_container {
     flex-direction: column;
     max-width: 480px;
     align-items: flex-start;
-  }
-  .about_story_sub_container:last-child {
-    flex-direction: column;
-    align-self: flex-start;
   }
 }

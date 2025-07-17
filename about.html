@@ -3,7 +3,7 @@ layout: default
 title: About
 ---
 <!-- About Top -->
-  <section class="about_services_wrapper">
+  <section class="about_services_wrapper about_top_wrapper">
     <div class="white_transparent_container">
       <h1 class="about_services_header">Bringing the Taste of Japan, Made Fresh On-Site</h1>
       <p>We create fresh, handcrafted Japanese dishes right at your venue. 
@@ -20,7 +20,7 @@ title: About
     <div class="about_chef_container">
       <div>
         <h3 class="sub-title">About Our Chef</h3>
-        <h2 class="header">Meet Chef Kosuke<br /> 
+        <h2 class="heading about_heading">Meet Chef Kosuke<br /> 
           Passion on Every Plate</h2>
         <p>Originally from Kyoto, Japan, Chef Kosuke has over 20 years of 
           experience—10 in Japan and 10 in New Zealand. Starting his 
@@ -46,7 +46,7 @@ title: About
         class="about_story_image_container">
       <div class="about_story_content_container">
         <h3 class="sub-title">About Our Story</h3>
-        <h2 class="header">Japanese Crafted with Care</h2>
+        <h2 class="heading about_heading">Japanese Crafted with Care</h2>
         <p>At the heart of our catering is a deep respect for tradition, 
           ingredients, and the people we serve. Every dish is handcrafted 
           from scratch, using carefully selected ingredients that reflect 
@@ -57,7 +57,10 @@ title: About
         </p>      
       </div>
     </div>
+  </section>
 
+  <!-- About Our Story Topicks -->
+  <section class="wrapper">
     <div class="about_story_sub_container">
       <div>
         <h3>Tailored to Every Guest</h3>
@@ -71,7 +74,7 @@ title: About
         alt='Vegetable Sushi image'>
     </div>
 
-    <div class="about_story_sub_container">
+    <div class="about_story_sub_container about_story_sub_container_revers">
       <div>
         <h3>Artwork on Your Plate</h3>
         <p>We believe a meal should spark joy. Chef Kosuke treats each 
@@ -86,5 +89,32 @@ title: About
     <div class="button_container">
       <a href="{{ '/services.html' | relative_url }}" class="btn outline">Contact Us</a>
     </div>
-    
   </section>
+
+
+  {% assign gallery= 
+    "Sushi Plate|corporate.png/Lobster Main Plate|private.png/Sashimi Plate|private.png/
+    Lobster Main Plate|private.png/Sushi Plate|corporate.png" | split: "/" %}
+
+  <!-- About Gallery -->
+    <section class="wrapper">
+      <div class="container">
+        <h2 class="heading">Kohaku Gallery</h2>
+        <div class="description-container">
+          <p class="description">
+            Discover Chef Kosuke’s exquisite creations. 
+            Each dish a showcase of refined Japanese cuisine. See more in our gallery.
+          </p> 
+        </div>
+        <div class="service-container">
+          {% for item in gallery %}
+          {% assign parts = item | split: "|" %}
+            <div>
+              <img src="/assets/images/{{ parts[1] | strip }}" alt="{{ parts[0] | strip }} image">              
+              <p class="service-title">{{ parts[0] | strip }}</p>
+            </div>
+          {% endfor %}
+        </div>
+        <button class="btn outline">See More Services</button>
+      </div>       
+    </section>
