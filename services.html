@@ -3,5 +3,43 @@ layout: default
 title: Services
 ---
 
-<h1>Services</h1>
-<p>We proudly serve traditional Japanese cuisine through thoughtful catering experiences.</p>
+<!-- Service Top -->
+  <section class="about_services_wrapper services_top_wrapper">
+    <div class="white_transparent_container">
+      <h1 class="about_services_header">Bringing the Taste of Japan, Made Fresh On-Site</h1>
+      <p>We create fresh, handcrafted Japanese dishes right at your venue. 
+        Each menu is thoughtfully prepared from scratch and cooked on-site 
+        for the best flavour and experience. With warm hospitality and 
+        attention to detail, 
+        we bring a true taste of Japan to your special moments.
+      </p>
+    </div>      
+  </section>
+
+ <!-- Services Plans-->
+    <section class="wrapper">
+      <div class="container">
+        <h4>Our Services</h4>
+        <h2 class="heading">Japanese Catering Plans</h2>
+        <div class="description-container">
+          <p class="description">
+            All dishes are served in an Omakase (chef’s
+             selection) style, where Chef Kosuke carefully 
+             chooses the best seasonal ingredients to create a beautifully 
+             curated dining experience for your guests.
+          </p> 
+        </div>
+        
+        <div class="service-container">
+          {% for item in services %}
+          {% assign parts = item | split: "|" %}
+            <div>
+              <img src="/assets/images/{{ parts[2] | strip }}" alt="{{ parts[0] | strip }} image">              
+              <h3 class="service-title">{{ parts[0] | strip }}</h3>
+              <p>{{ parts[1] | strip }}</p>
+            </div>
+          {% endfor %}
+        </div>
+        <button class="btn outline">See More Services</button>
+      </div>       
+    </section>

@@ -27,12 +27,16 @@ h3, h4, p {
   font-size: 1.5rem;
   text-align: center;
 }
+.text_white {
+  color: #ffffff;
+}
 @media screen and (max-width: 800px) {
   .description-container {
    max-width: 100%;
   }
 }
 .btn {
+  width: 3rem;
   padding: .8rem 2rem;
   text-align: center;
   text-decoration: none;
@@ -45,12 +49,12 @@ h3, h4, p {
 }
 
 .btn.outline {
-  background-color: #ffffff; /* Green */
+  background-color: #ffffff;
   border: 1px solid #333;
   color: #333;
 }
 .btn.outline-white {
-  background-color: transparent; /* Green */
+  background-color: transparent;
   border: 1px solid #fff;
   color: #fff;
 }

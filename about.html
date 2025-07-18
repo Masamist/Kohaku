@@ -5,12 +5,13 @@ title: About
 <!-- About Top -->
   <section class="about_services_wrapper about_top_wrapper">
     <div class="white_transparent_container">
-      <h1 class="about_services_header">Bringing the Taste of Japan, Made Fresh On-Site</h1>
-      <p>We create fresh, handcrafted Japanese dishes right at your venue. 
-        Each menu is thoughtfully prepared from scratch and cooked on-site 
-        for the best flavour and experience. With warm hospitality and 
-        attention to detail, 
-        we bring a true taste of Japan to your special moments.
+      <h1 class="about_services_header">Authentic Japanese Catering, 
+        Tailored to Your Occasion</h1>
+      <p>We bring the flavours of Japan to your event with beautifully 
+        crafted dishes, prepared fresh on-site by Chef Kosuke. 
+        From corporate functions to private celebrations, each menu is 
+        tailored with traditional techniques, seasonal ingredients, 
+        and a personal touch to make your event truly special.
       </p>
     </div>      
   </section>
@@ -43,7 +44,7 @@ title: About
     <div class="about_story_container">
       <img src="/assets/images/about_story.png" 
         alt='Chef cooking image'
-        class="about_story_image_container">
+        class="about_story_image">
       <div class="about_story_content_container">
         <h3 class="sub-title">About Our Story</h3>
         <h2 class="heading about_heading">Japanese Crafted with Care</h2>
@@ -93,28 +94,30 @@ title: About
 
 
   {% assign gallery= 
-    "Sushi Plate|corporate.png/Lobster Main Plate|private.png/Sashimi Plate|private.png/
-    Lobster Main Plate|private.png/Sushi Plate|corporate.png" | split: "/" %}
+    "Sushi Plate|gallery_sushi.png/Sashimi Plate|gallery_sashimi_mori.png/Grilled Lobster|gallery_lobster.png
+    /Entree|gallery_entree.png/Sashimi Boat|gallery_sashimi.png/Beef Tataki|gallery_beef_tataki.png" | split: "/" %}
 
   <!-- About Gallery -->
-    <section class="wrapper">
-      <div class="container">
-        <h2 class="heading">Kohaku Gallery</h2>
-        <div class="description-container">
-          <p class="description">
-            Discover Chef Kosuke’s exquisite creations. 
-            Each dish a showcase of refined Japanese cuisine. See more in our gallery.
-          </p> 
-        </div>
-        <div class="service-container">
-          {% for item in gallery %}
-          {% assign parts = item | split: "|" %}
-            <div>
-              <img src="/assets/images/{{ parts[1] | strip }}" alt="{{ parts[0] | strip }} image">              
-              <p class="service-title">{{ parts[0] | strip }}</p>
-            </div>
-          {% endfor %}
-        </div>
-        <button class="btn outline">See More Services</button>
-      </div>       
+    <section class="about_gallery_background">
+      <div class="wrapper">
+        <div class="container">
+          <h2 class="heading text_white">Kohaku Gallery</h2>
+          <div class="description-container">
+            <p class="description text_white">
+              Discover Chef Kosuke’s exquisite creations. 
+              Each dish a showcase of refined Japanese cuisine. See more in our gallery.
+            </p> 
+          </div>
+          <div class="about_gallery_container">
+            {% for item in gallery %}
+            {% assign parts = item | split: "|" %}
+              <div>
+                <img src="/assets/images/{{ parts[1] | strip }}" alt="{{ parts[0] | strip }} image">              
+                <p class="about_gallery_image_title">{{ parts[0] | strip }}</p>
+              </div>
+            {% endfor %}
+          </div>
+          <button class="btn outline-white">See Gallery</button>
+        </div>       
+      </div>
     </section>
