@@ -43,3 +43,57 @@ title: Services
         <button class="btn outline">See More Services</button>
       </div>       
     </section>
+
+    {% assign gallery= 
+    "Corporate Catering|Impress clients, reward your team, or elevate any business event with Kohaku’s refined Japanese catering. From executive lunches to large functions, Chef Kosuke brings a seasonal, omakase-style menu with elegant presentation and flexible options to suit every guest.Perfect for occasions such as: Corporate functions and client events
+    Team appreciation lunches or staff parties Business meetings and boardroom catering Workshops, conferences, and seminars Product launches and networking events|Perfect for occasions such as:
+Corporate functions and client events
+Team appreciation lunches or staff parties
+Business meetings and boardroom catering
+Workshops, conferences, and seminars
+Product launches and networking events|gallery_sushi.png
+    /Private Catering|Celebrate life’s special moments with Kohaku’s handcrafted Japanese cuisine. From birthdays to family gatherings, Chef Kosuke curates a seasonal omakase-style menu tailored to your event, served with refined flavour and warm hospitality.|Perfect for occasions such as:
+Birthday parties
+Anniversaries
+Family gatherings and reunions
+Holiday celebrations
+Home entertaining and private dinners
+Special milestones or intimate events|gallery_sashimi_mori.png
+    /Wedding Catering|Make your big day unforgettable with Kohaku’s elegant Japanese catering. Chef Kosuke designs a seasonal, omakase-style menu with exquisite presentation and personalised touches—creating a memorable dining experience that reflects your love story and delights every guest.|Perfect for occasions such as:
+Wedding receptions and ceremonies
+Engagement parties
+Rehearsal dinners
+Elopement celebrations
+Pre-wedding gatherings and post-wedding brunches|gallery_entree.png/" | split: "/" %}
+    <!-- Services_Ocasion -->
+    <section class="services_gallery_background">
+      <div class="wrapper">
+        <div class="container">
+          <h2 class="heading">Occasions</h2>
+          <div class="description-container">
+            <p class="description">
+              Japanese catering adds a special touch to any occasion, 
+              whether it’s a corporate event, private gathering, or 
+              celebration, we tailor the menu to suit your needs.
+            </p> 
+          </div>
+          
+          {% for item in gallery %}
+          {% assign parts = item | split: "|" %}
+            <div class="services_ocasion_container">
+              <h3 class="">{{ parts[0] | strip }}</h3>
+              <div class="services_ocasion_sub_container">
+                  
+                  <div>
+                    <p class="">{{ parts[1] | strip }}</p>
+                    <p class="">{{ parts[2] | strip }}</p>
+                  </div>
+                <img src="/assets/images/{{ parts[3] | strip }}" alt="{{ parts[0] | strip }} image">
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+          <button class="btn outline-white">See Gallery</button>
+        </div>       
+      </div>
+    </section>
