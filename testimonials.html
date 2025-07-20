@@ -1,0 +1,48 @@
+---
+layout: default
+title: Testimonials
+---
+
+  <!-- Tetsimonials -->
+    {% assign gallery= 
+    "A Truly Unforgettable Family Celebration, Made Even More Special by Every Bite
+    |Kohaku’s beautifully prepared dishes and heartfelt service turned a simple gathering into a memorable experience that left everyone talking.
+    |Family Birthday Party Catering [May 2023]
+    |— Emma R., Auckland
+    |gallery_lobster.png/
+    Flawless Catering for Our Corporate Event – Elegant, Fresh, and Professional
+    |Chef Kosuke and his team delivered a seamless experience with exceptional food and presentation—perfect for impressing clients and colleagues alike.
+    |Corporate Function Catering  [Apr 2024]
+    |— James T., NN Construction CEO
+    |gallery_entree.png/
+    A Refined Holiday Experience for Your Valued Guests
+    |Delight your premium guests with Chef Kosuke’s refined omakase menu—perfect for a festive, stylish, and memorable holiday event.
+    |Corporate Function Catering [Dec 2024]
+    |— Anna M., Event Coordinator 
+    |gallery_sashimi.png/" | split: "/" %}
+
+    <section class="wrapper">
+        <div class="container">
+          <h2 class="heading">What Our Clients Say</h2>
+          <div class="description-container">
+            <p class="description">
+              From private celebrations to corporate events, our clients appreciate 
+              the flavour, presentation, and personal touch Kohaku brings to every 
+              occasion. Here’s what they’ve shared about their experience.
+            </p> 
+          </div>
+          <div class=" ">
+            {% for item in gallery %}
+            {% assign parts = item | split: "|" %}
+              <div>
+                <img src="/assets/images/{{ parts[4] | strip }}" alt="{{ parts[0] | strip }} image">              
+                <p>{{ parts[0] | strip }}</p>
+                <p>{{ parts[1] | strip }}</p>
+                <p>{{ parts[2] | strip }}</p>
+                <p>{{ parts[3] | strip }}</p>
+              </div>
+            {% endfor %}
+          </div>
+          <button class="btn outline">See Gallery</button>
+        </div>       
+    </section>

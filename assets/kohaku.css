@@ -2,6 +2,16 @@ body {
   margin: 0;
   padding: 0;
 }
+
+h2 {
+  margin: 0;
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-variation-settings:
+    "YOPQ" 300;
+}
 h3, h4, p {
   font-family: "Roboto", sans-serif;
   color: #4F4F4F;
@@ -22,6 +32,7 @@ h3, h4, p {
 }
 .description-container {
   max-width: 45rem;
+  padding-bottom: 1.5rem;
 }
 .description {
   font-size: 1.5rem;
@@ -36,8 +47,8 @@ h3, h4, p {
   }
 }
 .btn {
-  width: 3rem;
-  padding: .8rem 2rem;
+  width: 11rem;
+  padding: .8rem 0;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -49,7 +60,7 @@ h3, h4, p {
 }
 
 .btn.outline {
-  background-color: #ffffff;
+  background-color: transparent;
   border: 1px solid #333;
   color: #333;
 }
@@ -88,7 +99,7 @@ h3, h4, p {
 @media screen and (max-width: 800px) {
   .about_services_wrapper {
     background-size: 100%;
-    min-height: 30vh;
+    max-height: 40vh;
   }
   .white_transparent_container {
     width: 100%;
@@ -97,10 +108,6 @@ h3, h4, p {
   }
 }
 @media screen and (max-width: 600px) {
-  .about_services_wrapper {
-    background-size: auto 50%;
-    min-height: 100%;
-  }
   .white_transparent_container {
     width: 100%;
     max-width: 600px;
@@ -111,18 +118,25 @@ h3, h4, p {
 }
 
 .about_services_header {
-  font-size: 2.8rem;
+  font-size: 3.5rem;
   line-height: 150%;
   text-align: center;
 }
 .sub-title {
   color: #ffbd02;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
 }
 .button_container {
   display: flex;
   justify-content: center;
 }
-
+@media screen and (max-width: 800px) {
+  .about_services_header {
+    font-size: 2.8rem;
+    line-height: 150%;
+  }
+}
 
 /**
  * Wrapper
