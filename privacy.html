@@ -50,11 +50,13 @@ please contact us at: Email: inquiry@kohaku.com  or Mobile: +64210373453" | spli
     </div>    
   </div>
   <div class="container align_left">
+    <div class="privacy_container">
+      <h5>Effective Date: 25 June 2025</h5>
+    </div>
     {% for item in privacy_sections %}
       {% assign parts = item | split: "|" %}
-      <div class="section">
+      <div class="privacy_container">
         <h3>{{ parts[0] | strip }}</h3>
-
         {% if parts[2] == "true" %}
           <p>{{ parts[1] | strip }}</p>
           <ul>
@@ -73,9 +75,9 @@ please contact us at: Email: inquiry@kohaku.com  or Mobile: +64210373453" | spli
             </ul>
           {% endif %}
         {% else %}
-        <p>{{ parts[1] | strip }}</p>
-      {% endif %}
-    </div>
-  {% endfor %}
+          <p>{{ parts[1] | strip }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
   </div>
 </section>

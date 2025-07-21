@@ -82,7 +82,7 @@ title: Services
           </div>
           
           {% for item in gallery %}
-          {% assign parts = item | split: "|" %}
+            {% assign parts = item | split: "|" %}
             <div class="services_occasions_container">
               <div class="services_occasions_sub_container">
                 <h3 class="service_occasions_title">{{ parts[0] | strip }}</h3>

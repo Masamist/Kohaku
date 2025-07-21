@@ -145,13 +145,13 @@ h3, h4, p {
  * Wrapper
  */
 .wrapper {
-  max-width: calc(1000px - 30px * 2);
+  max-width: calc(1000px - 48px * 2);
   margin-top: 3rem;
   margin-bottom: 3rem;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 48px; /* 3rem */
+  padding-left: 48px;
   display: flex;
   flex-direction: column;
   gap: 5rem;
@@ -240,3 +240,6 @@ h3, h4, p {
   font-weight: 500;
 }
 
+.privacy_container {
+  width: 100%;
+}

@@ -1,0 +1,88 @@
+---
+layout: default
+title: Privacy
+---
+
+{% assign terms_sections= 
+    "1. Catering Services|true
+    |a. Bookings
+    |All catering bookings are subject to availability and must be confirmed by Kohaku.
+    ~A non-refundable event catering fee of $200 NZD is required to secure your booking.
+    ~A service staff fee of $150 NZD per staff member applies.
+    ~The total fee includes a dedicated preparation time of two hours. 
+    |b. Facility Requirement
+    ~A kitchen facility is required for all plans except the Premium Nigiri-Sushi Platter and Luxury Sashimi Boat. We can tailor the menu to suit your available facilities, so please feel free to inquire.
+    ~The Char Grill Yakitori Experience requires a safe, designated area for grilling. 
+    |c. Menu & Dietary Requirements
+    ~All menus are Omakase-style (chef’s selection) and based on seasonal ingredients.
+    ~We are happy to accommodate dietary requirements (e.g., vegetarian, gluten-free, no raw items) with prior notice.
+    |d. Cancellations & Changes
+    ~Cancellations must be made at least 5 days before the event. The reschedule  are possible if there is availability. 
+    ~Fees may apply for late cancellations or significant changes to the booking.
+
+    /2. Kitchen Product Sales|true
+    |a. Orders & Payments
+    |Orders can be placed through our website and paid via direct bank transfer.
+    ~Orders will be processed once payment is received and confirmed.
+    ~Prices are in NZD and include GST where applicable.
+    |b. Shipping & Delivery
+    ~Delivery is available within New Zealand only.
+    ~We are not responsible for delays caused by third-party courier services.
+    |c. Returns & Refunds
+    ~We accept returns of unused items within 7 days of delivery.
+    ~Customers are responsible for return shipping unless the item is faulty or incorrect.
+    ~Refunds will be processed once the item is received and inspected.
+
+    /3. Intellectual Property|false
+    |All content on this website—including images, text, and logo—is the property of Kohaku and may not be used or reproduced without permission.
+
+    /4. Privacy|false
+    |Please refer to our [Privacy Policy] for information on how we collect, use, and protect your personal data.
+
+    /5. Contact|false
+    |If you have any questions regarding these terms, please contact us at: Email: inquiry@kohaku.com or Mobile: +64210373453
+
+    | split: "/" %}
+    
+<section class="wrapper">
+  <div class="container">
+    <h2 class="heading">Term of Service</h2>
+    <div class="description-container">
+      <p class="description">
+        At Kohaku, we are committed to protecting your privacy. This policy explains how we collect, use, and protect your personal information when you interact with our website.
+      </p> 
+    </div>    
+  </div>
+  <div class="container align_left">
+    <div class="privacy_container">
+      <h5>Effective Date: 25 June 2025</h5>
+    </div>
+    
+    {% for item in terms_sections %}
+      {% assign parts = item | split: "|" %}
+      <div class="privacy_container">
+        <h3>{{ parts[0] | strip }}</h3>
+        {% if parts[1] == "true" %}
+          <p>{{ parts[2] | strip }}</p>
+          <ul>
+            {% assign bullets = parts[3] | split: "~" %}
+            {% for bullet in bullets %}
+              <li>{{ bullet | strip }}</li>
+            {% endfor %}
+          </ul>
+          {% if parts[4] == "true" %}
+            <p>{{ parts[5] | strip }}</p>
+            <ul>
+              {% assign bullets = parts[6] | split: "~" %}
+              {% for bullet in bullets %}
+                <li>{{ bullet | strip }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% else %}
+          <p>{{ parts[2] | strip }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
