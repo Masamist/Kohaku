@@ -4,31 +4,31 @@ title: Privacy
 ---
 
 {% assign terms_sections= 
-    "1. Catering Services|true
-    |a. Bookings
-    |All catering bookings are subject to availability and must be confirmed by Kohaku.
+    "1. Catering Services|true|
+    a. Bookings|
+    All catering bookings are subject to availability and must be confirmed by Kohaku.
     ~A non-refundable event catering fee of $200 NZD is required to secure your booking.
     ~A service staff fee of $150 NZD per staff member applies.
-    ~The total fee includes a dedicated preparation time of two hours. 
-    |b. Facility Requirement
-    ~A kitchen facility is required for all plans except the Premium Nigiri-Sushi Platter and Luxury Sashimi Boat. We can tailor the menu to suit your available facilities, so please feel free to inquire.
-    ~The Char Grill Yakitori Experience requires a safe, designated area for grilling. 
-    |c. Menu & Dietary Requirements
-    ~All menus are Omakase-style (chef’s selection) and based on seasonal ingredients.
-    ~We are happy to accommodate dietary requirements (e.g., vegetarian, gluten-free, no raw items) with prior notice.
-    |d. Cancellations & Changes
-    ~Cancellations must be made at least 5 days before the event. The reschedule  are possible if there is availability. 
+    ~The total fee includes a dedicated preparation time of two hours.|
+    b. Facility Requirement|
+    A kitchen facility is required for all plans except the Premium Nigiri-Sushi Platter and Luxury Sashimi Boat. We can tailor the menu to suit your available facilities, so please feel free to inquire.
+    ~The Char Grill Yakitori Experience requires a safe, designated area for grilling.|
+    c. Menu & Dietary Requirements|
+    All menus are Omakase-style (chef’s selection) and based on seasonal ingredients.
+    ~We are happy to accommodate dietary requirements (e.g., vegetarian, gluten-free, 
+    no raw items) with prior notice.|
+    d. Cancellations & Changes|
+    Cancellations must be made at least 5 days before the event. The reschedule  are possible if there is availability. 
     ~Fees may apply for late cancellations or significant changes to the booking.
-
     /2. Kitchen Product Sales|true
     |a. Orders & Payments
     |Orders can be placed through our website and paid via direct bank transfer.
     ~Orders will be processed once payment is received and confirmed.
     ~Prices are in NZD and include GST where applicable.
-    |b. Shipping & Delivery
+    |b. Shipping & Delivery|
     ~Delivery is available within New Zealand only.
     ~We are not responsible for delays caused by third-party courier services.
-    |c. Returns & Refunds
+    |c. Returns & Refunds|
     ~We accept returns of unused items within 7 days of delivery.
     ~Customers are responsible for return shipping unless the item is faulty or incorrect.
     ~Refunds will be processed once the item is received and inspected.
@@ -70,10 +70,27 @@ title: Privacy
               <li>{{ bullet | strip }}</li>
             {% endfor %}
           </ul>
-          {% if parts[4] == "true" %}
-            <p>{{ parts[5] | strip }}</p>
+
+          {% if parts.size > 4 and parts[4] != blank %}
+            <p>{{ parts[4] | strip }}</p>
             <ul>
-              {% assign bullets = parts[6] | split: "~" %}
+              {% assign bullets = parts[5] | split: "~" %}
+              {% for bullet in bullets %}
+                <li>{{ bullet | strip }}</li>
+              {% endfor %}
+            </ul>
+          {% elsif parts.size > 6 and parts[6] != blank %}
+            <p>{{ parts[6] | strip }}</p>
+            <ul>
+              {% assign bullets = parts[7] | split: "~" %}
+              {% for bullet in bullets %}
+                <li>{{ bullet | strip }}</li>
+              {% endfor %}
+            </ul>
+          {% elsif parts.size > 8 and parts[8] != blank %}
+            <p>{{ parts[9] | strip }}</p>
+            <ul>
+              {% assign bullets = parts[9] | split: "~" %}
               {% for bullet in bullets %}
                 <li>{{ bullet | strip }}</li>
               {% endfor %}
@@ -81,6 +98,7 @@ title: Privacy
           {% endif %}
         {% else %}
           <p>{{ parts[2] | strip }}</p>
+          <p>error</p>
         {% endif %}
       </div>
     {% endfor %}
