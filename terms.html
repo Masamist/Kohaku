@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Privacy
+title: Terms
 ---
 
 {% assign terms_sections= 
@@ -20,29 +20,28 @@ title: Privacy
     d. Cancellations & Changes|
     Cancellations must be made at least 5 days before the event. The reschedule  are possible if there is availability. 
     ~Fees may apply for late cancellations or significant changes to the booking.
-    /2. Kitchen Product Sales|true
-    |a. Orders & Payments
-    |Orders can be placed through our website and paid via direct bank transfer.
+    
+    /2. Kitchen Product Sales|true|
+    a. Orders & Payments|
+    Orders can be placed through our website and paid via direct bank transfer.
     ~Orders will be processed once payment is received and confirmed.
-    ~Prices are in NZD and include GST where applicable.
-    |b. Shipping & Delivery|
+    ~Prices are in NZD and include GST where applicable.|
+    b. Shipping & Delivery|
     ~Delivery is available within New Zealand only.
-    ~We are not responsible for delays caused by third-party courier services.
-    |c. Returns & Refunds|
+    ~We are not responsible for delays caused by third-party courier services.|
+    c. Returns & Refunds|
     ~We accept returns of unused items within 7 days of delivery.
     ~Customers are responsible for return shipping unless the item is faulty or incorrect.
     ~Refunds will be processed once the item is received and inspected.
 
-    /3. Intellectual Property|false
-    |All content on this website—including images, text, and logo—is the property of Kohaku and may not be used or reproduced without permission.
+    /3. Intellectual Property|false|
+    All content on this website—including images, text, and logo—is the property of Kohaku and may not be used or reproduced without permission.
 
-    /4. Privacy|false
-    |Please refer to our [Privacy Policy] for information on how we collect, use, and protect your personal data.
+    /4. Privacy|false|
+    Please refer to our [Privacy Policy] for information on how we collect, use, and protect your personal data.
 
-    /5. Contact|false
-    |If you have any questions regarding these terms, please contact us at: Email: inquiry@kohaku.com or Mobile: +64210373453
-
-    | split: "/" %}
+    /5. Contact|false|
+    If you have any questions regarding these terms, please contact us at: Email: inquiry@kohaku.com or Mobile: +64210373453" | split: "/" %}
     
 <section class="wrapper">
   <div class="container">
@@ -54,53 +53,34 @@ title: Privacy
     </div>    
   </div>
   <div class="container align_left">
-    <div class="privacy_container">
+    <div class="privacy_terms_container">
       <h5>Effective Date: 25 June 2025</h5>
     </div>
     
     {% for item in terms_sections %}
-      {% assign parts = item | split: "|" %}
-      <div class="privacy_container">
-        <h3>{{ parts[0] | strip }}</h3>
-        {% if parts[1] == "true" %}
-          <p>{{ parts[2] | strip }}</p>
-          <ul>
-            {% assign bullets = parts[3] | split: "~" %}
-            {% for bullet in bullets %}
-              <li>{{ bullet | strip }}</li>
-            {% endfor %}
-          </ul>
-
-          {% if parts.size > 4 and parts[4] != blank %}
-            <p>{{ parts[4] | strip }}</p>
+    {% assign parts = item | split: "|" %}
+    <div class="privacy_terms_container">
+      <h3>{{ parts[0] | strip }}</h3>
+      {% if parts[1] == "true" %}
+        {% assign part_count = parts.size %}
+        {% for i in (2..part_count) %}
+          {% assign index = i | minus: 1 %}
+          {% assign content = parts[index] | strip %}
+          {% if content contains "~" %}
             <ul>
-              {% assign bullets = parts[5] | split: "~" %}
+              {% assign bullets = content | split: "~" %}
               {% for bullet in bullets %}
                 <li>{{ bullet | strip }}</li>
               {% endfor %}
             </ul>
-          {% elsif parts.size > 6 and parts[6] != blank %}
-            <p>{{ parts[6] | strip }}</p>
-            <ul>
-              {% assign bullets = parts[7] | split: "~" %}
-              {% for bullet in bullets %}
-                <li>{{ bullet | strip }}</li>
-              {% endfor %}
-            </ul>
-          {% elsif parts.size > 8 and parts[8] != blank %}
-            <p>{{ parts[9] | strip }}</p>
-            <ul>
-              {% assign bullets = parts[9] | split: "~" %}
-              {% for bullet in bullets %}
-                <li>{{ bullet | strip }}</li>
-              {% endfor %}
-            </ul>
+          {% elsif content != blank and content != "true" %}
+            <p>{{ content }}</p>
           {% endif %}
-        {% else %}
-          <p>{{ parts[2] | strip }}</p>
-          <p>error</p>
-        {% endif %}
-      </div>
-    {% endfor %}
+        {% endfor %}
+      {% else %}
+        <p>{{ parts[2] | strip }}</p>
+      {% endif %}
+    </div>
+  {% endfor %} 
   </div>
 </section>

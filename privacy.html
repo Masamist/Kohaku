@@ -12,7 +12,7 @@ Information collected includes:|
 Your name
 ~Mobile number
 ~Email address
-~Shipping and billing address (for product orders)|
+~Shipping and billing address (for product orders)
 
 /2. How We Use Your Information|
 Your personal information is used to:|true|
@@ -50,12 +50,12 @@ please contact us at: Email: inquiry@kohaku.com  or Mobile: +64210373453" | spli
     </div>    
   </div>
   <div class="container align_left">
-    <div class="privacy_container">
+    <div class="privacy_terms_container">
       <h5>Effective Date: 25 June 2025</h5>
     </div>
     {% for item in privacy_sections %}
       {% assign parts = item | split: "|" %}
-      <div class="privacy_container">
+      <div class="privacy_terms_container">
         <h3>{{ parts[0] | strip }}</h3>
         {% if parts[2] == "true" %}
           <p>{{ parts[1] | strip }}</p>

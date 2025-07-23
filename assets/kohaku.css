@@ -240,6 +240,10 @@ h3, h4, p {
   font-weight: 500;
 }
 
-.privacy_container {
+
+/**
+ * Privacy and Term page
+ */
+.privacy_terms_container {
   width: 100%;
 }
