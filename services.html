@@ -54,11 +54,14 @@ title: Services
             curated dining experience for your guests.
         </p> 
       </div>
-      <div class="services_addon_container">
+      <div class="services_card_flex_container ">
         {% for item in plan %}
           {% assign parts = item | split: "|" %}
-          <div class="services_addon_sub_container">
-            <img src="/assets/images/{{ parts[0] | strip }}" alt="{{ parts[1] | strip }} image">
+          <div class="services_card_container">
+            <div class="services_addon_image_container">
+              <img src="/assets/images/{{ parts[0] | strip }}" alt="{{ parts[1] | strip }} image">
+            </div>
+            
             <div class="services_addon_content_container">
               <h3 class="service_addon_title">{{ parts[1] | strip }}</h3>
               <p class=""><b>Style: </b>{{ parts[2] | strip }}</p>
@@ -96,10 +99,10 @@ title: Services
         </p> 
       </div>
       
-      <div class="services_addon_container">
+      <div class="services_card_flex_container">
         {% for item in addon %}
           {% assign parts = item | split: "|" %}
-          <div class="services_addon_sub_container">
+          <div class="services_card_container">
             <img src="/assets/images/{{ parts[0] | strip }}" alt="{{ parts[1] | strip }} image">
             <div class="services_addon_content_container">
               <h3 class="service_addon_title">{{ parts[1] | strip }}</h3>
