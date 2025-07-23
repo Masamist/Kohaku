@@ -1,9 +1,62 @@
 /**
-  * services___top_wrapper
+  * services_top_wrapper
  */
   .services_top_wrapper {
   background-image: url('/assets/images/services_intro.png');
  }
+
+ /**
+* Services_addon
+*/
+.services_addon_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
+}
+.services_addon_container image {
+  width: 100%;
+}
+ .services_addon_sub_container{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  height: auto;
+  width: 100%;
+  padding: 3rem;
+}
+.services_addon_content_container {
+  max-width: 58%;
+  margin: 0;
+  padding: 0;
+}
+.service_addon_title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+.service_addon_price {
+  font-size: 1.2rem;
+}
+.service_addon_tax {
+  font-size: .8rem;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+@media screen and (max-width: 800px) {
+  .services_addon_sub_container{
+    flex-direction: column;
+  }
+  .services_addon_content_container {
+    max-width: 100%;
+  }
+}
 
 /**
 * Services_occasion

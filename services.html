@@ -10,39 +10,110 @@ title: Services
       <p>We create fresh, handcrafted Japanese dishes right at your venue. 
         Each menu is thoughtfully prepared from scratch and cooked on-site 
         for the best flavour and experience. With warm hospitality and 
-        attention to detail, 
-        we bring a true taste of Japan to your special moments.
+        attention to detail, we bring a true taste of Japan to your special moments.
       </p>
     </div>      
   </section>
 
+  {% assign plan= 
+    "service_addon_sushi.png|Traditional Japanese Course Plan |Style: Individual seated servings
+    Group Size: 4–20 guests|
+    Enjoy an authentic taste of Japan with our thoughtfully curated catering 
+    experiences. From the creativity of omakase (chef’s selection) to the 
+    elegance of a Traditional Japanese Course, each menu is crafted with 
+    seasonal ingredients and refined presentation. This plan includes an 
+    entrée, sushi, main, and dessert—beautifully balanced to delight your 
+    guests and elevate any occasion.
+    |$ 90.00 NZD p.p.
+    /service_addon_sashimi.png|Traditional Japanese Course Plan |Style: Individual seated servings
+    Group Size: 4–20 guests|
+    Enjoy an authentic taste of Japan with our thoughtfully curated catering 
+    experiences. From the creativity of omakase (chef’s selection) to the 
+    elegance of a Traditional Japanese Course, each menu is crafted with 
+    seasonal ingredients and refined presentation. This plan includes an 
+    entrée, sushi, main, and dessert—beautifully balanced to delight your 
+    guests and elevate any occasion.|From $ 160.00 NZD p.p.
+    /service_addon_yakitori.png|Authentic Sushi Serving Experience Plan|Style: Live crafted individual servings 
+    Group Size: 2–6 guests|
+    Enjoy a premium sushi course, expertly prepared right in front of you, 
+    made-to-order nigiri and served fresh to your plate. Savor top-quality 
+    ingredients like bluefin otoro, sea urchin, and Wagyu, alongside freshly 
+    grated wasabi, warm rice, amuse bouche, broth pudding, sushi of the day, 
+    and dessert. Experience the true art of Japanese cuisine in every 
+    bite.|From $ 200.00 NZD p.p." | split: "/" %}
  <!-- Services Plans-->
-    <section class="wrapper">
-      <div class="container">
-        <h3 class="sub-title">Our Services</h3>
-        <h2 class="heading">Japanese Catering Plans</h2>
-        <div class="description-container">
-          <p class="description">
-            All dishes are served in an Omakase (chef’s
-             selection) style, where Chef Kosuke carefully 
-             chooses the best seasonal ingredients to create a beautifully 
-             curated dining experience for your guests.
-          </p> 
-        </div>
-        
-        <div class="service-container">
-          {% for item in services %}
+  <section class="wrapper">
+    <div class="container">
+      <h3 class="sub-title">Our Services</h3>
+      <h2 class="heading">Japanese Catering Plans</h2>
+      <div class="description-container">
+        <p class="description">
+          All dishes are served in an Omakase (chef’s
+            selection) style, where Chef Kosuke carefully 
+            chooses the best seasonal ingredients to create a beautifully 
+            curated dining experience for your guests.
+        </p> 
+      </div>
+      <div class="services_addon_container">
+        {% for item in plan %}
           {% assign parts = item | split: "|" %}
-            <div>
-              <img src="/assets/images/{{ parts[2] | strip }}" alt="{{ parts[0] | strip }} image">              
-              <h3 class="service-title">{{ parts[0] | strip }}</h3>
-              <p>{{ parts[1] | strip }}</p>
+          <div class="services_addon_sub_container">
+            <img src="/assets/images/{{ parts[0] | strip }}" alt="{{ parts[1] | strip }} image">
+            <div class="services_addon_content_container">
+              <h3 class="service_addon_title">{{ parts[1] | strip }}</h3>
+              <p class=""><b>Style: </b>{{ parts[2] | strip }}</p>
+              <p>{{ parts[3] | strip }}</p>
+              <p class="service_addon_price">{{ parts[4] | strip }}</p>
+              <p class="service_addon_tax">Tax included.</p>
             </div>
-          {% endfor %}
-        </div>
-        <button class="btn outline">See More Services</button>
-      </div>       
-    </section>
+          </div>
+        {% endfor %}
+      </div>
+    </div>    
+  </section>
+
+  {% assign addon= 
+    "service_addon_sushi.png|Premium Nigiri-Sushi Platter|Single Order|
+    Treat your family to a beautifully crafted sushi platter featuring 16 pieces of premium, hand-prepared sushi. Perfect for celebrations or simply 
+    making an ordinary day feel special. Minimum order: 5 platters.|From $ 100.00 NZD per Platter
+    /service_addon_sashimi.png|Luxury Sashimi Boat|Single Order|
+    Each piece of sashimi is expertly cured to enhance its umami and served with our 
+    handcrafted soy sauce for perfect balance. Featuring over 60 pieces and a sake-steamed live 
+    crayfish centerpiece, this luxurious platter is perfect for 8 to 10 guests.|From $ 420.00 NZD 
+    /service_addon_yakitori.png|Char Grill Yakitori Experience|Add-On|
+    Bring energy to your event with our Yakitori Experience—featuring tender, charcoal-grilled 
+    chicken skewers glazed in a rich, house-made sauce. Perfect for outdoor parties or indoor venues 
+    that allow grilling, it adds irresistible flavour and a fun.|From $ 250.00 NZD" | split: "/" %}
+    
+  <!-- Services_Add-On Option -->
+  <section class="wrapper">
+    <div class="container">
+      <h2 class="heading">Japanese Single Order or Add-On Options</h2>
+      <div class="description-container">
+        <p class="description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing 
+          elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p> 
+      </div>
+      
+      <div class="services_addon_container">
+        {% for item in addon %}
+          {% assign parts = item | split: "|" %}
+          <div class="services_addon_sub_container">
+            <img src="/assets/images/{{ parts[0] | strip }}" alt="{{ parts[1] | strip }} image">
+            <div class="services_addon_content_container">
+              <h3 class="service_addon_title">{{ parts[1] | strip }}</h3>
+              <p class=""><b>Style: </b>{{ parts[2] | strip }}</p>
+              <p>{{ parts[3] | strip }}</p>
+              <p class="service_addon_price">{{ parts[4] | strip }}</p>
+              <p class="service_addon_tax">Tax included.</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>       
+  </section>
+
 
     {% assign gallery= 
     "Corporate Catering|Impress clients, reward your team, or elevate any business event with Kohaku’s refined Japanese catering. From executive lunches to large functions, Chef Kosuke brings a seasonal, omakase-style menu with elegant presentation and flexible options to suit every guest.
