@@ -14,13 +14,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 2.5rem;
   height: auto;
-  width: 100%;
-  padding: 0;
-}
- .services_card_container img{
   padding: 3rem;
- }
+}
+
  @media screen and (max-width: 800px) {
   .services_card_container {
     flex-direction: column;
@@ -45,7 +43,22 @@
   /**
 * Services_plan
 */
-
+.services_plan_image_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.services_plan_image_sub_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
 
  /**
 * Services_addon
@@ -54,7 +67,7 @@
 .services_addon_content_container {
   max-width: 58%;
   margin: 0;
-  padding: 2rem 3rem 3rem 0;
+  padding: 0;
 }
 .service_addon_title {
   font-size: 2.5rem;
@@ -126,10 +139,10 @@
   padding: 0;
 }
 .service_occasions_bullets {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 .services_occasions_detail_container {
-  padding-right: 3rem;
+  padding-right: 2rem;
 }
 @media screen and (max-width: 800px) {
   .services_occasions_container {

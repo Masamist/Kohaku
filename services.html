@@ -16,7 +16,8 @@ title: Services
   </section>
 
   {% assign plan= 
-    "service_addon_sushi.png|Traditional Japanese Course Plan |Style: Individual seated servings
+    "service_plan_canape_1.png|service_plan_canape_2.png|service_plan_canape_3.png|Cocktail-Style 
+Japanese Canapés Plan|Style: Individual seated servings
     Group Size: 4–20 guests|
     Enjoy an authentic taste of Japan with our thoughtfully curated catering 
     experiences. From the creativity of omakase (chef’s selection) to the 
@@ -25,7 +26,7 @@ title: Services
     entrée, sushi, main, and dessert—beautifully balanced to delight your 
     guests and elevate any occasion.
     |$ 90.00 NZD p.p.
-    /service_addon_sashimi.png|Traditional Japanese Course Plan |Style: Individual seated servings
+    /service_plan_course_1.png|service_plan_course_2.png|service_plan_course_3.png|Traditional Japanese Course Plan |Style: Individual seated servings
     Group Size: 4–20 guests|
     Enjoy an authentic taste of Japan with our thoughtfully curated catering 
     experiences. From the creativity of omakase (chef’s selection) to the 
@@ -33,7 +34,7 @@ title: Services
     seasonal ingredients and refined presentation. This plan includes an 
     entrée, sushi, main, and dessert—beautifully balanced to delight your 
     guests and elevate any occasion.|From $ 160.00 NZD p.p.
-    /service_addon_yakitori.png|Authentic Sushi Serving Experience Plan|Style: Live crafted individual servings 
+    /service_plan_sushi_1.png|service_plan_sushi_2.png|service_plan_sushi_3.png|Authentic Sushi Serving Experience Plan|Style: Live crafted individual servings 
     Group Size: 2–6 guests|
     Enjoy a premium sushi course, expertly prepared right in front of you, 
     made-to-order nigiri and served fresh to your plate. Savor top-quality 
@@ -58,15 +59,19 @@ title: Services
         {% for item in plan %}
           {% assign parts = item | split: "|" %}
           <div class="services_card_container">
-            <div class="services_addon_image_container">
-              <img src="/assets/images/{{ parts[0] | strip }}" alt="{{ parts[1] | strip }} image">
+            <div class="services_plan_image_container">
+              <img src="/assets/images/{{ parts[0] | strip }}" alt="{{ parts[3] | strip }} image">
+              <div class="services_plan_image_sub_container">
+                <img src="/assets/images/{{ parts[1] | strip }}" alt="{{ parts[3] | strip }} image">
+                <img src="/assets/images/{{ parts[2] | strip }}" alt="{{ parts[3] | strip }} image">
+              </div>
             </div>
             
             <div class="services_addon_content_container">
-              <h3 class="service_addon_title">{{ parts[1] | strip }}</h3>
-              <p class=""><b>Style: </b>{{ parts[2] | strip }}</p>
-              <p>{{ parts[3] | strip }}</p>
-              <p class="service_addon_price">{{ parts[4] | strip }}</p>
+              <h3 class="service_addon_title">{{ parts[3] | strip }}</h3>
+              <p class=""><b>{{ parts[4] | strip }}</b></p>
+              <p>{{ parts[5] | strip }}</p>
+              <p class="service_addon_price">{{ parts[6] | strip }}</p>
               <p class="service_addon_tax">Tax included.</p>
             </div>
           </div>
