@@ -197,3 +197,23 @@ Japanese Canapés Plan|Style: Individual seated servings
       </div>
       <img src="assets/images/services_instagram.png">
     </section>
+
+
+{% assign catering-services = collections['catering-services'] %}
+
+{% if catering-services.products.size > 0 %}
+  <ul class="product-grid">
+    {% for product in catering-services.products %}
+      <li class="product-item">
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.price | money }}</p>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No products found in Business Services.</p>
+{% endif %}
+
