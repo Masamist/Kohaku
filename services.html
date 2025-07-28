@@ -34,7 +34,7 @@ Japanese Canapés Plan|Style: Individual seated servings
     seasonal ingredients and refined presentation. This plan includes an 
     entrée, sushi, main, and dessert—beautifully balanced to delight your 
     guests and elevate any occasion.|From $ 160.00 NZD p.p.
-    /service_plan_sushi_1.png|service_plan_sushi_2.png|service_plan_sushi_3.png|Authentic Sushi Serving Experience Plan|Style: Live crafted individual servings 
+    /service_paln_sushi_test.jpg|services_plan_sushi_test2.jpg|service_plan_sushi_3.png|Authentic Sushi Serving Experience Plan|Style: Live crafted individual servings 
     Group Size: 2–6 guests|
     Enjoy a premium sushi course, expertly prepared right in front of you, 
     made-to-order nigiri and served fresh to your plate. Savor top-quality 
@@ -67,12 +67,12 @@ Japanese Canapés Plan|Style: Individual seated servings
               </div>
             </div>
             
-            <div class="services_addon_content_container">
-              <h3 class="service_addon_title">{{ parts[3] | strip }}</h3>
+            <div class="services_content_container">
+              <h3 class="service_title">{{ parts[3] | strip }}</h3>
               <p class=""><b>{{ parts[4] | strip }}</b></p>
               <p>{{ parts[5] | strip }}</p>
-              <p class="service_addon_price">{{ parts[6] | strip }}</p>
-              <p class="service_addon_tax">Tax included.</p>
+              <p class="service_price">{{ parts[6] | strip }}</p>
+              <p class="service_tax">Tax included.</p>
             </div>
           </div>
         {% endfor %}
@@ -109,12 +109,12 @@ Japanese Canapés Plan|Style: Individual seated servings
           {% assign parts = item | split: "|" %}
           <div class="services_card_container">
             <img src="/assets/images/{{ parts[0] | strip }}" alt="{{ parts[1] | strip }} image">
-            <div class="services_addon_content_container">
-              <h3 class="service_addon_title">{{ parts[1] | strip }}</h3>
+            <div class="services_content_container">
+              <h3 class="service_title">{{ parts[1] | strip }}</h3>
               <p class=""><b>Style: </b>{{ parts[2] | strip }}</p>
               <p>{{ parts[3] | strip }}</p>
-              <p class="service_addon_price">{{ parts[4] | strip }}</p>
-              <p class="service_addon_tax">Tax included.</p>
+              <p class="service_price">{{ parts[4] | strip }}</p>
+              <p class="service_tax">Tax included.</p>
             </div>
           </div>
         {% endfor %}
@@ -122,7 +122,7 @@ Japanese Canapés Plan|Style: Individual seated servings
     </div>       
   </section>
 
-
+    <!-- Services_Ocasion -->
     {% assign gallery= 
     "Corporate Catering|Impress clients, reward your team, or elevate any business event with Kohaku’s refined Japanese catering. From executive lunches to large functions, Chef Kosuke brings a seasonal, omakase-style menu with elegant presentation and flexible options to suit every guest.
     |Perfect for occasions such as:|
@@ -147,7 +147,6 @@ Japanese Canapés Plan|Style: Individual seated servings
     ~Elopement celebrations
     ~Pre-wedding gatherings and post-wedding brunches|services_occasions_wedding.png/" | split: "/" %}
     
-    <!-- Services_Ocasion -->
     <section class="services_occasions_background">
       <div class="wrapper">
         <div class="container">
