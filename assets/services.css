@@ -21,9 +21,9 @@
 
  @media screen and (max-width: 800px) {
   .services_card_container {
-    flex-direction: column;
-    padding-bottom: 0;
-    margin-bottom: 4rem;
+    flex-direction: column-reverse;
+    padding-bottom: 3.8rem;
+    margin-bottom: 0;
   }
   .services_card_container img {
     width: 100%;
@@ -38,12 +38,23 @@
   margin: 0;
   padding: 0;
 }
+@media screen and (max-width: 800px) {
+  .services_content_container {
+    max-width: 100%;
+  }
+}
+
 .service_title {
   font-size: 2.5rem;
   font-weight: 400;
-  line-height: 3.5rem;
+  line-height: 3rem;
   margin: 0;
   padding: 0;
+}
+.service_description {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0 0 1rem 0;
 }
 .service_price {
   font-size: 1.5rem;
@@ -56,11 +67,7 @@
   padding: 0;
   line-height: 0;
 }
-@media screen and (max-width: 800px) {
-  .services_content_container {
-    max-width: 100%;
-  }
-}
+
 
 /**
   * services_top_wrapper
@@ -79,7 +86,6 @@
   gap: 1.3rem;
   margin: 0;
   padding: 0;
-  width: 45%;
 }
 .services_plan_image_container > img{
   width: 100%;
@@ -99,6 +105,34 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
+}
+  @media screen and (max-width: 800px) {
+  .services_plan_image_container {
+    flex-direction: row;
+    width: 100%;
+  } 
+  .services_plan_image_sub_container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .services_plan_image_sub_container img {
+    width: 100%;
+  }
+}
+  @media screen and (max-width: 680px) {
+
+  .services_plan_image_container {
+    flex-direction: column;
+    gap: 1.3rem;
+    width: 100%;
+  }
+  .services_plan_image_sub_container {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .services_plan_image_sub_container img {
+    width: 48%;
+  }
 }
 
 /**
