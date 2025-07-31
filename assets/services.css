@@ -19,6 +19,10 @@
   padding: 3rem;
 }
 
+ .services_card_container.notice{
+  background-color: #eeeeee;
+}
+
  @media screen and (max-width: 800px) {
   .services_card_container {
     flex-direction: column-reverse;
@@ -133,6 +137,47 @@
   .services_plan_image_sub_container img {
     width: 48%;
   }
+}
+
+/**
+* Services_notice
+*/
+.services_notice_background {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  height: auto;
+  width: 100%;
+}
+.services_notice_title_container {
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.services_notice_content_container {
+  width: 70%;
+}
+.service_notice_title {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.service_notice_exclamation {
+  background-color: #aaaaaa;
+  color: #eeeeee;
+  padding: 1rem;
+  border-radius: 3rem;
+  font-size: 2.2rem;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  line-height: 1.1rem;
 }
 
 /**
