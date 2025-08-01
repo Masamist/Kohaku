@@ -73,6 +73,11 @@ Japanese Canapés Plan|Style: Individual seated servings
               <p>{{ parts[5] | strip }}</p>
               <p class="service_price">{{ parts[6] | strip }}</p>
               <p class="service_tax">Tax included.</p>
+              <div>
+                <div class="service_btn_link">
+                  <a href="{{ product.url }}">More Detail -></a>
+                </div>
+              </div>
             </div>
           </div>
         {% endfor %}
@@ -248,4 +253,5 @@ Japanese Canapés Plan|Style: Individual seated servings
 {% else %}
   <p>No products found in Business Services.</p>
 {% endif %}
+
 
