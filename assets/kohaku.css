@@ -15,7 +15,7 @@ h2 {
 h3, h4, p {
   font-family: "Roboto", sans-serif;
   color: #4F4F4F;
-  line-height: 160%;
+  line-height: 150%;
 }
 
 /**
@@ -32,14 +32,16 @@ h3, h4, p {
 .heading {
   font-size: 2.5rem;
   text-align: center;
+  padding: 0;
 }
 .description-container {
-  max-width: 45rem;
-  padding-bottom: 1.5rem;
+  max-width: 47rem;
+  padding-bottom: 1rem;
 }
 .description {
   font-size: 1.5rem;
   text-align: center;
+  padding: 0;
 }
 .text_white {
   color: #ffffff;
