@@ -40,7 +40,7 @@ title: Home
             occasion with authentic flavours and exceptional hospitality.
           </p> 
         </div>
-        
+
         <div class="service-container">
           {% for item in services %}
           {% assign parts = item | split: "|" %}
@@ -54,6 +54,23 @@ title: Home
         <button class="btn outline">See More Services</button>
       </div>       
     </section>
+
+    {% assign feedback = 
+    "The Food was Amazing!!Such a great performance of Sushi!|
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      Ut enim ad minim veniam, quis nostrud.|
+      John Doe - Smith Corporation/
+      Thanks Ko!!Such a great performance of Sushi!|
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      Ut enim ad minim veniam, quis nostrud.|
+      John Doe - Smith Corporation/
+      The Food was Amazing!!Such a great performance of Sushi!|
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      Ut enim ad minim veniam, quis nostrud.|
+      John Doe - Smith Corporation" | split: "/" %}
 
     <!-- Home Feedback -->
     <section class="wrapper">
@@ -73,20 +90,18 @@ title: Home
           <div class="slider-container">
             
             <div class="slider-track" id="slider">
+              {% for item in feedback %}
+              {% assign parts = item | split: "|" %}
+              
               <div class="card">
                 <h1 class="feedback-header">
                   <span class="quotation-mark">"</span><br />
-                  The Food was Amazing!!<br />Such a great performance of Sushi! 
+                  {{ parts[0] | strip }}
                 </h1>
-                <p>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                  Ut enim ad minim veniam, quis nostrud.
-                </p>
-                <p class="feedback-client-name">John Doe / Smith Corporation</p>
+                <p>{{ parts[1] | strip }}</p>
+                <p class="feedback-client-name">{{ parts[2] | strip }}</p>
               </div>
-              <div class="card">Card 2</div>
-              <div class="card">Card 3</div>
+              {% endfor %}
             </div>
           </div>
           <div class="slider-controls">
@@ -97,7 +112,39 @@ title: Home
       </div>
 
       
+    <!-- Home Feedback New Carousel -->
+    <section class="wrapper">
+      <div class="container">
+        <h2 class="heading">What Our Clients Are Saying</h2>
+        <div class="description-container">
+          <p class="description">We’re proud to have earned the trust of 
+            our clients. Their kind words reflect the care, quality, 
+            and unforgettable experience we aim to deliver at every event.
+          </p> 
+        </div>
 
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+          <!-- Full-width images with number and caption text -->
+           {% for item in feedback %}
+              {% assign parts = item | split: "|" %}
+              
+              <div class="card">
+                <h1 class="feedback-header">
+                  <span class="quotation-mark">"</span><br />
+                  {{ parts[0] | strip }}
+                </h1>
+                <p>{{ parts[1] | strip }}</p>
+                <p class="feedback-client-name">{{ parts[2] | strip }}</p>
+              </div>
+              {% endfor %}
+
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
       
       
       <!-- <div class="card">
@@ -119,3 +166,34 @@ title: Home
         <a href="{{ '/contact.html' | relative_url }}" class="btn outline-white">Contact Us</a> 
       </div>
     </section>
+
+    <script>
+      let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+    </script>

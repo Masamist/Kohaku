@@ -76,8 +76,10 @@
 .service-container div {
   width: 33.3%;
 }
-.service-container div img {
+.service-container > div > img {
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
 .service-title {
   font-size: 1.5rem;
