@@ -163,23 +163,20 @@ Japanese Canapés Plan|Style: Individual seated servings
     <!-- Services_Ocasion -->
     {% assign gallery= 
     "Corporate Catering|Impress clients, reward your team, or elevate any business event with Kohaku’s refined Japanese catering. From executive lunches to large functions, Chef Kosuke brings a seasonal, omakase-style menu with elegant presentation and flexible options to suit every guest.
-    |Perfect for occasions such as:|
-    Corporate functions and client events
+    |Corporate functions and client events
     ~Team appreciation lunches or staff parties
     ~Business meetings and boardroom catering
     ~Workshops, conferences, and seminars
     ~Product launches and networking events|services_occasions_corporate.png
     /Private Catering|Celebrate life’s special moments with Kohaku’s handcrafted Japanese cuisine. From birthdays to family gatherings, Chef Kosuke curates a seasonal omakase-style menu tailored to your event, served with refined flavour and warm hospitality.
-    |Perfect for occasions such as:|
-    Birthday parties
+    | Birthday parties
     ~Anniversaries
     ~Family gatherings and reunions
     ~Holiday celebrations
     ~Home entertaining and private dinners
     ~Special milestones or intimate events|services_occasions_private.png
     /Wedding Catering|Make your big day unforgettable with Kohaku’s elegant Japanese catering. Chef Kosuke designs a seasonal, omakase-style menu with exquisite presentation and personalised touches—creating a memorable dining experience that reflects your love story and delights every guest.
-    |Perfect for occasions such as:|
-    Wedding receptions and ceremonies
+    | Wedding receptions and ceremonies
     ~Engagement parties
     ~Rehearsal dinners
     ~Elopement celebrations
@@ -205,9 +202,9 @@ Japanese Canapés Plan|Style: Individual seated servings
                 <hr class="services_occasions_line">
                 <div class="services_occasions_detail_container">
                   <p>{{ parts[1] | strip }}</p>
-                  <p class=""><b>{{ parts[2] | strip }}</b></p>
+                  <p class="service_occasions_bullets_title"><b>Perfect for occasions such as:</b></p>
                   <ul>
-                    {% assign bullets = parts[3] | split: "~" %}
+                    {% assign bullets = parts[2] | split: "~" %}
                     {% for bullet in bullets %}
                       <li class="service_occasions_bullets">{{ bullet | strip }}</li>
                     {% endfor %}
@@ -226,10 +223,10 @@ Japanese Canapés Plan|Style: Individual seated servings
       <div class="services_instagram_content_container">
         <h3 class="services_instagram_sub_title">Omakase Style ??</h3>
         <h2 class="services_instagram_title">See More at Instagram!</h2>
-        <p class="text_white">Every event is unique—explore our Instagram to 
-          see sample dishes and get inspired by the 
+        <p class="text_white">Every event is unique—explore our 
+          Instagram to see sample dishes and get inspired by the 
           different styles of catering we offer.</p>
-        <h3 class="text_white">Follow us @kohaku_catering</h3>
+        <h3 class="services_instagram_follow text_white">Follow us @kohaku_catering</h3>
         <img src="assets/images/instagram-icon.png" alt="Instagram Icon" class="instagram_icon">
       </div>
       <img src="assets/images/services_instagram.png">

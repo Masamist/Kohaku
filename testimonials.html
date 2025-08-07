@@ -35,10 +35,11 @@ title: Testimonials
             {% for item in gallery %}
             {% assign parts = item | split: "|" %}
               <div>
-                <img src="/assets/images/{{ parts[4] | strip }}" alt="{{ parts[0] | strip }} image">
+                <img class="testimonial_image" src="/assets/images/{{ parts[4] | strip }}" alt="{{ parts[0] | strip }} image">
                 <div class="testimonials_content_container">
-                  <img src="/assets/images/testimonials_quotation.png" alt="quotation" class="testimonial_quotation">             
-                  <h2>{{ parts[0] | strip }}</h2>
+                  <img src="/assets/images/testimonials_quotation.png" 
+                    alt="quotation" class="testimonial_quotation">             
+                  <h2 class="testimonial_header">{{ parts[0] | strip }}</h2>
                   <p>{{ parts[1] | strip }}</p>
                   <p class="testimonials_occasion">{{ parts[2] | strip }}</p>
                   <p class="testimonials_client">{{ parts[3] | strip }}</p>

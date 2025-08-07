@@ -224,6 +224,10 @@
   margin: 0;
   padding: 0;
 }
+.service_occasions_bullets_title{
+  margin: 0;
+  padding: 0;
+}
 .service_occasions_bullets {
   font-size: 1.2rem;
 }

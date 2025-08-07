@@ -25,15 +25,33 @@
     padding: 0;
 }
 .testimonials_client {
-    font-size: .8rem;
+    font-size: .9rem;
     font-weight: 600;
     margin: 0;
     padding-top: .3rem;
 }
 
 @media screen and (max-width: 800px) {
+  .testimonial_image {
+    width: 100%;
+    height: auto;
+  }
   .about_services_header {
     font-size: 2.8rem;
     line-height: 150%;
   }
+  .testimonial_container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonials_content_container {
+    margin-left: 0;
+    text-align: center;
+  }
+  .testimonial_header {
+    font-size: 2rem;
+    line-height: 150%;
+    margin-bottom: 0.5rem;
+  }
+
 }
