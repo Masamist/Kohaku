@@ -1,0 +1,42 @@
+.footer_link_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.footer_link_sub_container {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  justify-content: flex-start;
+  background-color: aquamarine;
+}
+.footer_list_heading {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.footer_link_sub_container li {
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+.footer_link_sub_container a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+}
+.footer_border {
+  border-top: 1px solid #333333;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;;
+}
+.footer_copyright {
+  font-size: o.9rem;
+  color: #333;
+  text-align: center;
+  padding: 1rem 0;
+}
