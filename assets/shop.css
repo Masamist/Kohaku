@@ -1,0 +1,119 @@
+/**
+  * Shop___colour_wrapper
+ */
+.background_colour_wrapper {
+  background-color: #222222 ;
+
+}
+/**
+  * Shop___top_wrapper
+ */
+.shop_top_wrapper {
+  background-image: url('/assets/images/shop_knife_top.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  min-height: 100vh;
+  height: 100%;
+  width: auto;
+  display: flex;
+
+ }
+ .shop_top_container {
+    height: 100%;
+    padding: 0;
+    padding-left: 3rem;
+    padding-bottom: 1.5rem;
+ }
+ .shop_top_heading {
+    color: #fff;
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    padding: 0;
+    margin: 0 0 .4rem 0;
+ }
+ .shop_top_body {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+ }
+  @media screen and (max-width: 1200px) {
+  .shop_top_wrapper {
+    min-height: 80vh;
+  }
+
+  .shop_top_heading {
+    font-size: 2.3rem;
+  }
+  .shop_top_body {
+    font-size: 1.2rem;
+  }
+ }
+ @media screen and (max-width: 960px) {
+  .shop_top_wrapper {
+    min-height: 60vh;
+    background-position: top;
+  }
+  .shop_top_container {
+    padding-left: 1.5rem;
+  }
+  .shop_top_heading {
+    font-size: 2rem;
+  }
+  .shop_top_body {
+    font-size: 1rem;
+  }
+ }
+
+
+ /**
+  * Shop_story
+ */
+ .shop_story_contaier {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5%;
+ }
+.shop_story_image_container {
+  width: 55%;
+}
+.shop_story_image_container img {
+  width: 100%;
+  height: auto;
+}
+.shop_story_text_container {
+  width: 40%;
+}
+.shop_story_header {
+  font-size: 2rem;
+  color: #ffffff;
+}
+.shop_story_body {
+  font-size: 1rem;
+  line-height: 170%;
+  color: #ffffff;
+}
+@media screen and (max-width: 800px) {
+  .shop_story_contaier {
+    flex-direction: column;
+    align-items:flex-start;;
+  }
+  .shop_story_image_container {
+    width: 100%;
+  }
+
+  .shop_story_text_container {
+    width: 100%;
+    text-align: center;
+  }
+  .shop_story_header {
+    font-size: 1.8rem;
+  }
+  .shop_story_body {
+    font-size: 0.9rem;
+  }
+ }
